@@ -11,6 +11,17 @@ Every time a dependency, tool, or library is installed, append a single line to 
 
 ---
 
+## Environment
+
+- Architecture: ARM64 (aarch64)
+- Hardware: HP ZGX Nano G1n
+- OS: NVIDIA DGX OS 7 / Ubuntu 24.04
+- Kernel: TBD
+- Docker: TBD
+- NVIDIA Driver: TBD
+- CUDA: TBD
+---
+
 ## Compatibility Matrix
 
 | Date | Package / Tool | Version / Commit | Status | Action / Notes |
