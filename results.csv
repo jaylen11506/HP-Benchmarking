@@ -1,0 +1,1 @@
+timestamp,model,version,params,quantization,runtime,runtime_version,context_len,batch_size,ttft_ms,inter_token_ms,tokens_per_sec,peak_mem_gb,avg_watts,ambient_c,notes
