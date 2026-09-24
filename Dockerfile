@@ -19,12 +19,12 @@ RUN apt-get update && apt-get install -y \
 # Set python3 as default
 RUN update-alternatives --install /usr/bin/python python /usr/bin/python3.10 1
 
-# 3. Build llama.cpp from source (pinned to a specific release tag)
+# 3. Build llama.cpp (CPU mode for laptop dry run; set GGML_CUDA=ON on NVIDIA target)
 WORKDIR /opt
 RUN git clone https://github.com/ggerganov/llama.cpp.git && \
     cd llama.cpp && \
     git checkout b3500 && \
-    cmake -B build -DGGML_CUDA=ON && \
+    cmake -B build -DGGML_CUDA=OFF && \
     cmake --build build --config Release -j$(nproc)
 
 # 4. Install pinned PyTorch & Python benchmark dependencies
@@ -40,4 +40,3 @@ COPY . /app
 
 # Entrypoint to run the benchmark harness script
 ENTRYPOINT ["python", "run_benchmark.py"]
-
