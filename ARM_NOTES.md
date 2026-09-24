@@ -27,3 +27,4 @@ Every time a dependency, tool, or library is installed, append a single line to 
 | Date | Package / Tool | Version / Commit | Status | Action / Notes |
 | :--- | :--- | :--- | :--- | :--- |
 | 2026-09-21 | ARM_NOTES.md | N/A | Created | Initialized ARM64 log file in repository root. |
+| 2026-09-23 | `llama.cpp`  | Building with `-DGGML_CUDA=ON` inside container on Mac host fails linking `libcuda.so.1`| required `-DGGML_CUDA=OFF` for local CPU dry run. |
