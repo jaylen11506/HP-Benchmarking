@@ -2,12 +2,14 @@
 # Installed by BOTH docker/bench.Dockerfile and the Colab setup cell,
 # so every machine runs identical Python code.
 # Exact versions (==) so results can't shift because a package updated.
-# Versions checked against PyPI on 2026-09-24.
+# Pins chosen to match what Colab itself requires (checked 2026-09-24),
+# so installing them doesn't break Colab's own tools.
 
 psutil==7.2.2            # system RAM/CPU readings -> peak_sys_mem_gb
-nvidia-ml-py==13.610.43  # NVIDIA GPU readings: memory, temperature, power telemetry (you import it as `pynvml`)
-huggingface_hub==2.0.0   # downloading model files at an exact revision
-requests==2.34.2         # sending single requests to llama-server
-aiohttp==3.14.3          # sending many requests at once for B4 concurrency
+nvidia-ml-py==13.610.43  # NVIDIA GPU readings: memory, temperature, power (import name: pynvml)
+huggingface_hub==1.33.0  # model downloads; must stay <2.0 for datasets/transformers
+requests==2.32.4         # talking to llama-server; exact version google-colab requires
+aiohttp==3.14.3          # many simultaneous requests for B4 concurrency
 lm_eval[api]==0.4.13     # B7 accuracy tests (MMLU, GSM8K) run against llama-server
+datasets==5.0.1          # what lm-eval uses to load MMLU/GSM8K; pinned so B7 data code is fixed
 jsonschema==4.26.0       # checking every result row against the schema
