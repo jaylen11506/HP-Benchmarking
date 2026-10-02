@@ -1,0 +1,11 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Principal": { "Service": "sagemaker.amazonaws.com" },
+      "Action": "sts:AssumeRole",
+      "Condition": { "StringEquals": { "aws:SourceAccount": "__AWS_ACCOUNT_ID__" } }
+    }
+  ]
+}
