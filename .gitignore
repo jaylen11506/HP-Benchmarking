@@ -1,0 +1,4 @@
+models/
+results/
+__pycache__/
+.env
