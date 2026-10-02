@@ -1,0 +1,32 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "ListBenchBucket",
+      "Effect": "Allow",
+      "Action": ["s3:ListBucket", "s3:GetBucketLocation"],
+      "Resource": "arn:aws:s3:::__HP_BENCH_BUCKET__"
+    },
+    {
+      "Sid": "ReadWriteBenchObjects",
+      "Effect": "Allow",
+      "Action": ["s3:GetObject", "s3:PutObject"],
+      "Resource": "arn:aws:s3:::__HP_BENCH_BUCKET__/*"
+    },
+    {
+      "Sid": "NotebookLogs",
+      "Effect": "Allow",
+      "Action": ["logs:CreateLogGroup", "logs:CreateLogStream", "logs:PutLogEvents", "logs:DescribeLogStreams"],
+      "Resource": [
+        "arn:aws:logs:__AWS_REGION__:__AWS_ACCOUNT_ID__:log-group:/aws/sagemaker/*",
+        "arn:aws:logs:__AWS_REGION__:__AWS_ACCOUNT_ID__:log-group:/aws/sagemaker/*:log-stream:*"
+      ]
+    },
+    {
+      "Sid": "StopItself",
+      "Effect": "Allow",
+      "Action": ["sagemaker:StopNotebookInstance", "sagemaker:DescribeNotebookInstance"],
+      "Resource": "arn:aws:sagemaker:__AWS_REGION__:__AWS_ACCOUNT_ID__:notebook-instance/hp-bench-t4"
+    }
+  ]
+}
