@@ -28,3 +28,4 @@ Every time a dependency, tool, or library is installed, append a single line to 
 | :--- | :--- | :--- | :--- | :--- |
 | 2026-09-21 | ARM_NOTES.md | N/A | Created | Initialized ARM64 log file in repository root. |
 | 2026-09-23 | `llama.cpp`  | Building with `-DGGML_CUDA=ON` inside container on Mac host fails linking `libcuda.so.1`| required `-DGGML_CUDA=OFF` for local CPU dry run. |
+| 2026-10-08 | `llama.cpp` (Homebrew bottle) | 0.6.0 (build 11429, commit d81235049) | Installed cleanly | Apple M5 Pro / macOS 27.0 (arm64, not the Nano). `brew install llama.cpp`; prebuilt with Metal. No CUDA, so `pynvml` finds no GPU: `avg_watts` blank, `peak_mem_gb` is llama-server RSS. |
