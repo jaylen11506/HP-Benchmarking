@@ -33,5 +33,12 @@
     "quantization": "Q4_K_M",
     "hf_repo": "bartowski/Meta-Llama-3-8B-Instruct-GGUF",
     "hf_file": "Meta-Llama-3-8B-Instruct-Q4_K_M.gguf"
+  },
+  {
+    "model": "Qwen3-0.6B",
+    "params": "0.6B",
+    "quantization": "Q4_K_M",
+    "hf_repo": "bartowski/Qwen_Qwen3-0.6B-GGUF",
+    "hf_file": "Qwen_Qwen3-0.6B-Q4_K_M.gguf"
   }
 ]
